@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Tuto_01/Tuto_01_AdoDotNet.csproj" />
+  <Project Path="Tuto_02_Dapper/Tuto_02_Dapper.csproj" Id="f9f385e1-c388-4591-bac0-4b3f019dbeea" />
 </Solution>
