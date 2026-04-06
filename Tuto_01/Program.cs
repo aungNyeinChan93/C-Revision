@@ -29,7 +29,7 @@ while (reader.Read())
 //           ([Title]
 //           ,[Author]
 //           ,[Year]
-//           )
+//           ) 
 //     VALUES
 //           (Test 
 //           ,GIGI
@@ -38,7 +38,7 @@ while (reader.Read())
 
 //SqlCommand cmd2 = new SqlCommand(createQuery,connection);
 //SqlDataAdapter adapter2 = new SqlDataAdapter(cmd2);
-adapter2.Fill(table);
+//adapter2.Fill(table);
 
 
 
