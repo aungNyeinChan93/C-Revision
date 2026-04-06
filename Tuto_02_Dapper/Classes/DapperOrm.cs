@@ -30,7 +30,7 @@ namespace Tuto_02_Dapper.Classes
 
         public void Create(BookDto bookDto)
         {
-                string query = @"
+            string query = @"
                  INSERT INTO [dbo].[Books]
                    ([Title]
                    ,[Author]
@@ -67,7 +67,11 @@ namespace Tuto_02_Dapper.Classes
 
         public void Update(BookDto bookDto, int id)
         {
-            string query = @"
+
+            using (IDbConnection db = new SqlConnection(DapperOrm._databaseString))
+            {
+
+                string query = @"
                      UPDATE [dbo].[Books]
                        SET [Title] = @Title
                           ,[Author] = @Author
@@ -75,10 +79,9 @@ namespace Tuto_02_Dapper.Classes
                           ,[DeleteFlag] = 0
                      WHERE BookId = @BookId";
 
-            using (IDbConnection db = new SqlConnection(DapperOrm._databaseString))
-            {
                 int result = db.Execute(query, new { Title = bookDto?.Title, Author = bookDto?.Author, Year = bookDto?.Year ,BookId = id});
                 Console.WriteLine(result >= 1 ? "Update Success" : "Update Fail");
+
             }
         }
 
