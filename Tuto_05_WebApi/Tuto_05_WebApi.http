@@ -1,0 +1,14 @@
+@Tuto_05_WebApi_HostAddress = http://localhost:5049
+
+GET {{Tuto_05_WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+// Books
+GET {{Tuto_05_WebApi_HostAddress}}/api/books/
+Accept:application/json
+
+### 
+// Book
+
+

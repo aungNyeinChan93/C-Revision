@@ -5,4 +5,5 @@
   <Project Path="Tuto_02_Dapper/Tuto_02_Dapper.csproj" Id="f9f385e1-c388-4591-bac0-4b3f019dbeea" />
   <Project Path="Tuto_03_EFCore/Tuto_03_EFCore.csproj" Id="a8dfc7cd-445f-41ea-9955-fe11fbbf61f6" />
   <Project Path="Tuto_04_ClassLibary/Tuto_04_ClassLibary.csproj" Id="637ae21a-6b6b-4efc-930b-bf9d07e3fe85" />
+  <Project Path="Tuto_05_WebApi/Tuto_05_WebApi.csproj" Id="2f5e2beb-36b5-43b9-9807-b4b4309d1182" />
 </Solution>
