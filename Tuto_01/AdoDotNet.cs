@@ -132,5 +132,9 @@ namespace Tuto_01_AdoDotNet
             Console.WriteLine(result >=1 ? "Delete Success":"Delete Fail");
             connection.Close();
         }
+
+
+        
     }
+    
 }

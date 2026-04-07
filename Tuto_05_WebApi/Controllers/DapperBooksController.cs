@@ -39,6 +39,25 @@ public class DapperBooksController : ControllerBase
         return book is not null ? Ok(book) : NotFound();
     }
 
+    [HttpPost]
+    public IActionResult Create(Book book)
+    {
+        string query = @"INSERT INTO [dbo].[Books]
+                       ([Title]
+                       ,[Author]
+                       ,[Year]
+                       ,[DeleteFlag])
+                 VALUES
+                       (@Title
+                       ,@Author
+                       ,@Year
+                       ,0
+                       )";
+        var result = dapper.Execute(query, book);
+        return result >= 1 ? Created() : BadRequest();
+
+    }
+
     [HttpPut("{id}")]
     public IActionResult UpdateAll([FromRoute]int id ,Book book)
     {
