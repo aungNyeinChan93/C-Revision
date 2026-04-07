@@ -70,5 +70,34 @@ namespace Tuto_05_WebApi.Controllers
             int result = _db.SaveChanges();
             return result >= 1 ? NoContent() : BadRequest();
         }
+
+        [HttpPatch("{id}")] 
+        public IActionResult UpdateOne([FromRoute]int id,Book? book)
+        {
+
+            var b = _db.Books.AsNoTracking().FirstOrDefault(b => b.DeleteFlag != true && b.BookId == id);
+
+            if (b is null)
+            {
+                return NotFound();
+            }
+            if (!string.IsNullOrEmpty(book.Title))
+            {
+                b.Title = book.Title;
+            }
+            if (!string.IsNullOrEmpty(book.Author))
+            {
+                b.Author = book.Author;
+            }
+            if (book.Year >=1)
+            {
+                b.Year = book.Year;
+            }
+           
+            _db.Entry(b).State = EntityState.Modified;
+            int result = _db.SaveChanges();
+
+            return result >= 1 ? Ok("Update success") : BadRequest();
+        }
     }
 }
