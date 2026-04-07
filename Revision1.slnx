@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="AdoService/AdoService.csproj" Id="953fd650-7637-4dd6-9d23-a8cd0f0d336d" />
   <Project Path="DatabaseOne/DatabaseOne.csproj" Id="bb6f186c-eb7c-4dd7-86b3-6ca5f989f0f8" />
   <Project Path="DatabaseTwo/DatabaseTwo.csproj" Id="ab54e4b6-866f-49e2-bada-521517bac21e" />
   <Project Path="Tuto_01/Tuto_01_AdoDotNet.csproj" />

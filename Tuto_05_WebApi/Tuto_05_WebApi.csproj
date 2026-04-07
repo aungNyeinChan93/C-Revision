@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdoService\AdoService.csproj" />
     <ProjectReference Include="..\DatabaseTwo\DatabaseTwo.csproj" />
   </ItemGroup>
 
