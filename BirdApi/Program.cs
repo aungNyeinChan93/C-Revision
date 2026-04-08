@@ -7,6 +7,7 @@ app.MapGet("/", () => "Hello World!");
 
 
 app.UseBirdEndPoint();
+app.UseTodoEndPoint();
 
 
 app.Run();
