@@ -19,12 +19,14 @@ namespace BirdApi.EndPonts
             }).WithName("Birds");
 
             app.MapPost("/api/birds", (Bird bird) =>
-            {
+            { 
                 string birdsStr = File.ReadAllText("Data/Birds.json");
                 var birdModel = JsonConvert.DeserializeObject<BirdModel>(birdsStr);
 
                 if (birdModel is null) return Results.BadRequest();
 
+                //bird.Id = birdModel.Birds.Count + 1;
+                bird.Id = birdModel.Birds.Max(x => x.Id +1);
                 birdModel.Birds.Add(bird);
 
                 string jsonStr = JsonConvert.SerializeObject(birdModel,Formatting.Indented);
@@ -98,7 +100,7 @@ namespace BirdApi.EndPonts
                     return Results.BadRequest(err.Message);
                 }
 
-            });
+            }).WithName("Delete");
         }
     }
 }
