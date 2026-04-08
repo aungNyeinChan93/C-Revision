@@ -9,11 +9,11 @@ public partial class Post
 
     public string Title { get; set; } = null!;
 
-    public string? Despcription { get; set; }
+    public string? Description { get; set; }
 
     public string? Author { get; set; }
 
-    public byte[]? Date { get; set; }
+    public DateTime? Date { get; set; }
 
-    public bool DeleteFlag { get; set; }
+    public bool? DeleteFlag { get; set; }
 }
