@@ -13,7 +13,7 @@ namespace Domain_01.Models
         public bool IsError { get { return !IsSuccess; } }
         public T? Result { get; set; }
 
-        public static ResponseModel<T> Success<T>(int resCode ,string  resDesc ,T result)
+        public static ResponseModel<T> Success(int resCode ,string  resDesc ,T result)
         {
             return new ResponseModel<T>
             {
@@ -24,17 +24,7 @@ namespace Domain_01.Models
                 Result = result
             };
         }
-        public static ResponseModel<T> Error<T>(int resCode, string resDesc, T? result )
-        {
-            return new ResponseModel<T>
-            {
-                IsSuccess = false,
-                ResDesc = resDesc,
-                ResCode = resCode,
-                ResType = EnumResponseType.Error,
-                Result = result
-            };
-        }
+        
         public static ResponseModel<T> Error(int resCode, string resDesc)
         {
             return new ResponseModel<T>
