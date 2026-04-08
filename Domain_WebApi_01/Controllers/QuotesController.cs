@@ -1,5 +1,6 @@
 ﻿using DatabaseTwo.Models;
 using Domain_01.Features;
+using Domain_01.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,7 @@ namespace Domain_WebApi_01.Controllers
         public IActionResult Get()
         {
             var quotes = _quoteService.AllQuotes();
-            if (quotes is null || quotes.Count == 0) return NotFound();
+            if (quotes!.IsError || quotes.ResType == EnumResponseType.Error) return NotFound();
             return Ok(quotes);
         }
 

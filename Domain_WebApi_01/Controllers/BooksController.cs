@@ -21,7 +21,7 @@ namespace Domain_WebApi_01.Controllers
         public IActionResult GetAllBooks()
         {
             var books = _bookService.Read();
-            return books is not null || books!.Response.IsSuccess ? Ok(books) : NotFound();
+            return books is not null || books!.Response!.IsSuccess ? Ok(books) : NotFound();
         }
 
         [HttpGet("{id}")]

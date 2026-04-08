@@ -1,4 +1,5 @@
 ﻿using DatabaseTwo.Models;
+using Domain_01.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,24 @@ namespace Domain_01.Features
             _db = new AppDbContext();
         }
 
-        public List<Quote>? AllQuotes()
+        public ResponseModel<List<Quote>>? AllQuotes()
         {
+            var responseModel = new ResponseModel<List<Quote>>();
             var quotes = _db.Quotes.AsNoTracking().ToList();
-            return quotes;
+            if(quotes is null)
+            {
+                responseModel.ResCode = 400;
+                responseModel.ResDesc = "Quotes Not Found!";
+                responseModel.ResType = EnumResponseType.Error;
+                responseModel.IsSuccess = false;
+                return responseModel;
+            }
+            responseModel.ResCode = 200;
+            responseModel.ResDesc = "Get All Quotes";
+            responseModel.ResType = EnumResponseType.Success;
+            responseModel.IsSuccess = true;
+            responseModel.Result = quotes;
+            return responseModel;
         }
 
         public Quote? GetQuote(int id)
