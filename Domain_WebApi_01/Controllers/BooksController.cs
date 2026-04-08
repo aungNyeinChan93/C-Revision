@@ -21,5 +21,12 @@ namespace Domain_WebApi_01.Controllers
             var books = _bookService.Read();
             return books is not null || books.Count >= 1 ? Ok(books) : NotFound();
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetBook([FromRoute]int id)
+        {
+            var book = _bookService.ReadOne(id);
+            return book is null ? NotFound() : Ok(book);
+        }
     }
 }

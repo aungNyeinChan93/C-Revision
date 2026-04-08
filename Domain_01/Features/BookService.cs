@@ -44,5 +44,28 @@ namespace Domain_01.Features
              return books;
 
         }
+
+        public Book? ReadOne(int id)
+        {
+            string query = @"SELECT [BookId]
+                          ,[Title]
+                          ,[Author]
+                          ,[Year]
+                          ,[DeleteFlag]
+                          FROM [dbo].[Books]
+                          where DeleteFlag = 0 and BookId = @BookId";
+            var books = _adoService.Query(query, new Adoparameter { Name = "@BookId", Value = id });
+            if(books is null || books.Rows.Count <=0) return null;
+            var row = books!.Rows[0];
+            Book book = new Book
+            {
+                Title = row["Title"].ToString()!,
+                Author = row["Author"].ToString()!,
+                BookId = int.Parse(row["BookId"].ToString()!),
+                DeleteFlag = bool.Parse(row["DeleteFlag"].ToString()!),
+                Year = int.Parse(row["Year"].ToString()!)
+            };
+            return book;
+        }
     }
 }
