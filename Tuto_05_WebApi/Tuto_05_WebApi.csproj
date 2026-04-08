@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdoService\AdoService.csproj" />
+    <ProjectReference Include="..\DapperService\DapperService.csproj" />
     <ProjectReference Include="..\DatabaseTwo\DatabaseTwo.csproj" />
   </ItemGroup>
 

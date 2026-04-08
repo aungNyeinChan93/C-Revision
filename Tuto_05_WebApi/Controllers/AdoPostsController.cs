@@ -148,7 +148,7 @@ namespace Tuto_05_WebApi.Controllers
             parameters.Add(new Adoparameter { Name = "@PostId", Value = id });
 
             var isSuccess =_servie.Execute(query,parameters);
-            return isSuccess? Ok() : BadRequest();
+            return isSuccess? Ok() : BadRequest(); 
         }
 
         [HttpDelete("{id}")]
