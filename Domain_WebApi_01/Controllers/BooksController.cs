@@ -1,5 +1,7 @@
-﻿using Domain_01.Features;
+﻿using DatabaseTwo.Models;
+using Domain_01.Features;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Domain_WebApi_01.Controllers
@@ -28,5 +30,27 @@ namespace Domain_WebApi_01.Controllers
             var book = _bookService.ReadOne(id);
             return book is null ? NotFound() : Ok(book);
         }
+
+        [HttpPost]
+        public IActionResult CreateBook([FromBody] Book book)
+        {
+            bool isSuccess = _bookService.Create(book);
+            return isSuccess ? Created() : BadRequest();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update([FromRoute]int id,Book book)
+        {
+            var res = _bookService.Update(id, book);
+            return res ? Ok("Update Success") : BadRequest();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute]int id)
+        {
+            var res = _bookService.Delete(id);
+            return res ? NoContent() : BadRequest();
+        }
+
     }
 }
