@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="AdoService/AdoService.csproj" Id="953fd650-7637-4dd6-9d23-a8cd0f0d336d" />
+  <Project Path="BirdApi/BirdApi.csproj" Id="0f36a96e-de03-4d9c-87cb-61f1d3f243e7" />
   <Project Path="DapperService/DapperService.csproj" Id="0c11a053-e696-4080-a258-c82591f5338e" />
   <Project Path="DatabaseOne/DatabaseOne.csproj" Id="bb6f186c-eb7c-4dd7-86b3-6ca5f989f0f8" />
   <Project Path="DatabaseThree/DatabaseThree.csproj" Id="abcc9e62-c3d3-4aa9-89ef-d85d361f7c0b" />
