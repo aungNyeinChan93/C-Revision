@@ -36,10 +36,14 @@ namespace Domain_01.Features
             return responseModel;
         }
 
-        public Quote? GetQuote(int id)
+        public ResponseModel<Quote>? GetQuote(int id)
         {
             var quote = _db.Quotes.AsNoTracking().FirstOrDefault(q => q.QuoteId == id);
-            return quote;
+            if(quote is null)
+            {
+                return ResponseModel<Quote>.Error(400, "Not Found Quote");
+            }
+            return ResponseModel<Quote>.Success(200, "Get Quote", quote);
         }
 
         public bool Create(Quote quote)
