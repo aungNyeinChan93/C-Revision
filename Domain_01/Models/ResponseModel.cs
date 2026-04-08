@@ -25,7 +25,7 @@ namespace Domain_01.Models
             };
         }
         
-        public static ResponseModel<T> Error(int resCode, string resDesc)
+        public static ResponseModel<T> Error(int resCode, string resDesc ,T? result =default)
         {
             return new ResponseModel<T>
             {
@@ -33,6 +33,7 @@ namespace Domain_01.Models
                 ResDesc = resDesc,
                 ResCode = resCode,
                 ResType = EnumResponseType.Error,
+                Result = result
             };
         }
     }
