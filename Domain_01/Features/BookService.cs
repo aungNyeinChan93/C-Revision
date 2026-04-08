@@ -1,5 +1,6 @@
 ﻿using AdoService;
 using DatabaseTwo.Models;
+using Domain_WebApi_01.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,8 +17,10 @@ namespace Domain_01.Features
             _adoService = new MyAdoService();
         }
 
-        public List<Book>? Read()
+        public BookResponseModel<List<Book>>? Read()
         {
+            var bookResponseModel = new BookResponseModel<List<Book>>();
+
             string query = @"SELECT [BookId]
                           ,[Title]
                           ,[Author]
@@ -25,7 +28,21 @@ namespace Domain_01.Features
                           ,[DeleteFlag]
                           FROM [dbo].[Books]
                           where DeleteFlag = 0";
+
             var bookTable = _adoService.Query(query);
+
+            if (bookTable is null)
+            {
+                bookResponseModel.Response = new BaseResponseModel
+                {
+                    IsSuccess = false,
+                    ResCode = 400,
+                    ResDesc = "DataTable is null",
+                    ResType = EnumResponseType.SystemError
+                };
+
+                return bookResponseModel;
+            }
 
             List<Book> books = new List<Book>();
 
@@ -40,8 +57,11 @@ namespace Domain_01.Features
                     Year = int.Parse(row["Year"].ToString()!)
                 });
             }
-            
-             return books;
+
+            bookResponseModel.Response = new BaseResponseModel()
+            { ResCode = 200 ,ResDesc = "Get All Books",IsSuccess= true ,ResType= EnumResponseType.Success};
+            bookResponseModel.Result = books;
+            return bookResponseModel;
 
         }
 
