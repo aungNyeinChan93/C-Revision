@@ -30,6 +30,7 @@ app.UseBook();
 
 app.MapGet("/api/test1", () =>
 {
+    //extension method example
     Book book = new Book();
     return book.Test();
 

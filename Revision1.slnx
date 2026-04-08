@@ -10,4 +10,5 @@
   <Project Path="Tuto_04_ClassLibary/Tuto_04_ClassLibary.csproj" Id="637ae21a-6b6b-4efc-930b-bf9d07e3fe85" />
   <Project Path="Tuto_05_WebApi/Tuto_05_WebApi.csproj" Id="2f5e2beb-36b5-43b9-9807-b4b4309d1182" />
   <Project Path="Tuto_06_WebApiEmpty/Tuto_06_MinimalApi.csproj" Id="51fe2986-3355-41fb-a69a-b31027b2b25d" />
+  <Project Path="Tuto_07_JSON/Tuto_07_JSON.csproj" Id="fce832d6-8ef1-45e6-939d-6f641e819d7c" />
 </Solution>
