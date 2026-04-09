@@ -6,6 +6,7 @@
   <Project Path="DatabaseThree/DatabaseThree.csproj" Id="abcc9e62-c3d3-4aa9-89ef-d85d361f7c0b" />
   <Project Path="DatabaseTwo/DatabaseTwo.csproj" Id="ab54e4b6-866f-49e2-bada-521517bac21e" />
   <Project Path="Domain_01/Domain_01.csproj" Id="9ffab3d5-531e-46e7-8d1f-a3cb7603af1c" />
+  <Project Path="Domain_02/Domain_02.csproj" Id="032b9b87-7def-435b-a0a9-b982e2ae7c5c" />
   <Project Path="Domain_WebApi_01/Domain_WebApi_01.csproj" Id="59ed9a9e-e2d0-408b-a75b-adfd31297788" />
   <Project Path="Tuto_01/Tuto_01_AdoDotNet.csproj" />
   <Project Path="Tuto_02_Dapper/Tuto_02_Dapper.csproj" Id="f9f385e1-c388-4591-bac0-4b3f019dbeea" />
@@ -14,4 +15,5 @@
   <Project Path="Tuto_05_WebApi/Tuto_05_WebApi.csproj" Id="2f5e2beb-36b5-43b9-9807-b4b4309d1182" />
   <Project Path="Tuto_06_WebApiEmpty/Tuto_06_MinimalApi.csproj" Id="51fe2986-3355-41fb-a69a-b31027b2b25d" />
   <Project Path="Tuto_07_JSON/Tuto_07_JSON.csproj" Id="fce832d6-8ef1-45e6-939d-6f641e819d7c" />
+  <Project Path="Tuto_08_MinimalApi/Tuto_08_MinimalApi.csproj" Id="2a234fa1-6ee8-4ff1-b813-d2e7c7a6b03d" />
 </Solution>
