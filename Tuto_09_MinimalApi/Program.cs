@@ -1,5 +1,7 @@
+using Refit;
 using RestSharp;
 using Tuto_09_MinimalApi.EndPoints;
+using Tuto_09_MinimalApi.Inteerface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +14,13 @@ builder.Services.AddScoped(n => new HttpClient()
 //builder.Services.AddScoped<RestClient>();
 builder.Services.AddScoped( n =>new RestClient(baseUrl: builder.Configuration.GetSection("WebApi_05").Value!));
 
+builder.Services.AddScoped( n =>  RestService.For<IBookApi>(builder.Configuration.GetSection("WebApi_05").Value!));
+
 var app = builder.Build();
 
 app.UsePost();
 app.UseQuotes();
 app.UseBooks();
+app.UseEfCoreBook();
 
 app.Run();

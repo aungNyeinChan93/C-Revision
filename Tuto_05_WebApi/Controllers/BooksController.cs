@@ -23,7 +23,8 @@ namespace Tuto_05_WebApi.Controllers
                 .AsNoTracking()
                 .Where(b => b.DeleteFlag == false)
                 .ToList();
-            return Ok(new {data = books,message = "Get all Books "});
+            //return Ok(new {data = books,message = "Get all Books "});
+            return Ok(books);
         }
 
         [HttpGet("{id}")]
