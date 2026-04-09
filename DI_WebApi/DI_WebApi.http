@@ -1,0 +1,6 @@
+@DI_WebApi_HostAddress = http://localhost:5027
+
+GET {{DI_WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

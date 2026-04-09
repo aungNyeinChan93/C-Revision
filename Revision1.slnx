@@ -5,6 +5,7 @@
   <Project Path="DatabaseOne/DatabaseOne.csproj" Id="bb6f186c-eb7c-4dd7-86b3-6ca5f989f0f8" />
   <Project Path="DatabaseThree/DatabaseThree.csproj" Id="abcc9e62-c3d3-4aa9-89ef-d85d361f7c0b" />
   <Project Path="DatabaseTwo/DatabaseTwo.csproj" Id="ab54e4b6-866f-49e2-bada-521517bac21e" />
+  <Project Path="DI_WebApi/DI_WebApi.csproj" Id="b44beaad-606b-43a8-a04e-b210cedbf8d2" />
   <Project Path="Domain_01/Domain_01.csproj" Id="9ffab3d5-531e-46e7-8d1f-a3cb7603af1c" />
   <Project Path="Domain_02/Domain_02.csproj" Id="032b9b87-7def-435b-a0a9-b982e2ae7c5c" />
   <Project Path="Domain_WebApi_01/Domain_WebApi_01.csproj" Id="59ed9a9e-e2d0-408b-a75b-adfd31297788" />

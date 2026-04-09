@@ -8,7 +8,7 @@ namespace Tuto_09_TestConsole.Interfaces
 {
     public interface BookApi
     {
-        [Get("/api/books")]
+        [Get("/api/books")] 
         Task<List<Book>> GetAll();
 
         [Get("/api/books/{id}")]
