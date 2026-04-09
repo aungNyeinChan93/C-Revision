@@ -10,11 +10,12 @@ builder.Services.AddScoped(n => new HttpClient()
 });
 
 //builder.Services.AddScoped<RestClient>();
-builder.Services.AddScoped( n =>new RestClient(baseUrl: builder.Configuration.GetSection("ApiEndPoint").Value!));
+builder.Services.AddScoped( n =>new RestClient(baseUrl: builder.Configuration.GetSection("WebApi_05").Value!));
 
 var app = builder.Build();
 
 app.UsePost();
 app.UseQuotes();
+app.UseBooks();
 
 app.Run();
