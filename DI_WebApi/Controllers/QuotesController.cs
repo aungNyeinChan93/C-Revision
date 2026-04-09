@@ -40,5 +40,13 @@ namespace DI_WebApi.Controllers
             return Ok(quote);
 
         }
+
+        [HttpGet("/api/quotes/test")]
+        public IActionResult Test()
+        {
+            //_service.add
+            
+            return Ok("test");
+        }
     }
 }
