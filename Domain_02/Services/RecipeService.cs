@@ -72,7 +72,7 @@ namespace Domain_02.Services
         public async Task<string?> Delete(int id)
         {
             RestRequest request = new RestRequest($"recipes/{id}",Method.Delete);
-            var response = await _restClient.DeleteAsync(request);
+            var response = await _restClient.ExecuteAsync(request);
             if (response.IsSuccessStatusCode)
             {
                 var resultStr = response.Content;

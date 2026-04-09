@@ -7,5 +7,6 @@ app.MapGet("/", () => "Hello World!");
 
 app.UseTodo();
 app.UseRecipes();
+app.UseUsers();
 
 app.Run();
