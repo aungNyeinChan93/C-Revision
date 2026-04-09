@@ -11,9 +11,9 @@ namespace DI_WebApi.Controllers
     public class RecipesController : ControllerBase
     {
 
-        private readonly RecipeService _recipeService;
+        private readonly IRecipeService _recipeService;
 
-        public RecipesController(RecipeService recipeService)
+        public RecipesController(IRecipeService recipeService)
         {
             _recipeService = recipeService;
         }

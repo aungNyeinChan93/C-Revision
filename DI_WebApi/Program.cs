@@ -13,8 +13,8 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
 });
-builder.Services.AddScoped<QuoteService>();
-builder.Services.AddScoped<RecipeService>();
+builder.Services.AddScoped<IQuoteService,QuoteService>();
+builder.Services.AddScoped<IRecipeService,RecipeService>();
 
 var app = builder.Build();
 

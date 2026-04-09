@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Domain_01.Features
 {
-    public class QuoteService
+    public class QuoteService : IQuoteService
     {
         private AppDbContext _db;
 
@@ -20,7 +20,7 @@ namespace Domain_01.Features
         {
             var responseModel = new ResponseModel<List<Quote>>();
             var quotes = _db.Quotes.AsNoTracking().ToList();
-            if(quotes is null)
+            if (quotes is null)
             {
                 responseModel.ResCode = 400;
                 responseModel.ResDesc = "Quotes Not Found!";
@@ -39,7 +39,7 @@ namespace Domain_01.Features
         public ResponseModel<Quote>? GetQuote(int id)
         {
             var quote = _db.Quotes.AsNoTracking().FirstOrDefault(q => q.QuoteId == id);
-            if(quote is null)
+            if (quote is null)
             {
                 return ResponseModel<Quote>.Error(400, "Not Found Quote");
             }
@@ -50,10 +50,10 @@ namespace Domain_01.Features
         {
             _db.Quotes.Add(quote);
             var res = _db.SaveChanges();
-            return res >=1 ? true : false;
+            return res >= 1 ? true : false;
         }
 
-        public bool Update(int id,Quote quote)
+        public bool Update(int id, Quote quote)
         {
             var oldQuote = _db.Quotes.AsNoTracking().FirstOrDefault(q => q.QuoteId == id);
             if (oldQuote is null) return false;
@@ -72,7 +72,7 @@ namespace Domain_01.Features
             _db.Quotes.Remove(oldQuote);
             _db.Entry(oldQuote).State = EntityState.Deleted;
             var res = _db.SaveChanges();
-            return res >= 1 ? true :false;
+            return res >= 1 ? true : false;
 
         }
     }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Domain_02.Services
 {
-    public class RecipeService
+    public class RecipeService : IRecipeService
     {
         private RestClient _restClient;
 
@@ -20,7 +20,7 @@ namespace Domain_02.Services
         public async Task<string?> GetAllAsync()
         {
             //RestRequest request = new RestRequest("recipes", Method.Get);
-            var response = await _restClient.GetAsync(new RestRequest("recipes",Method.Get));
+            var response = await _restClient.GetAsync(new RestRequest("recipes", Method.Get));
             if (response.IsSuccessStatusCode)
             {
                 var result = response.Content;
@@ -55,7 +55,7 @@ namespace Domain_02.Services
             return null;
         }
 
-        public async Task<string?> UpdateAsync(Recipe recipe,int id)
+        public async Task<string?> UpdateAsync(Recipe recipe, int id)
         {
             RestRequest request = new RestRequest($"recipes/{id}", Method.Put);
             request.AddJsonBody<Recipe>(recipe);
@@ -71,13 +71,14 @@ namespace Domain_02.Services
 
         public async Task<string?> Delete(int id)
         {
-            RestRequest request = new RestRequest($"recipes/{id}",Method.Delete);
+            RestRequest request = new RestRequest($"recipes/{id}", Method.Delete);
             var response = await _restClient.ExecuteAsync(request);
             if (response.IsSuccessStatusCode)
             {
                 var resultStr = response.Content;
                 return resultStr;
-            };
+            }
+            ;
             return null;
         }
     }

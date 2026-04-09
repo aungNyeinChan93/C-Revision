@@ -9,9 +9,9 @@ namespace DI_WebApi.Controllers
     [ApiController]
     public class QuotesController : ControllerBase
     {
-        private readonly QuoteService _service;
+        private readonly IQuoteService _service;
 
-        public QuotesController(QuoteService service)
+        public QuotesController(IQuoteService service)
         {
             _service = service;
         }
