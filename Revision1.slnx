@@ -18,5 +18,6 @@
   <Project Path="Tuto_06_WebApiEmpty/Tuto_06_MinimalApi.csproj" Id="51fe2986-3355-41fb-a69a-b31027b2b25d" />
   <Project Path="Tuto_07_JSON/Tuto_07_JSON.csproj" Id="fce832d6-8ef1-45e6-939d-6f641e819d7c" />
   <Project Path="Tuto_08_MinimalApi/Tuto_08_MinimalApi.csproj" Id="2a234fa1-6ee8-4ff1-b813-d2e7c7a6b03d" />
+  <Project Path="Tuto_09_MinimalApi/Tuto_09_MinimalApi.csproj" Id="116cfa86-0a5a-49a0-800e-2f11ba4a5b19" />
   <Project Path="Tuto_09_TestConsole/Tuto_09_TestConsole.csproj" Id="604f258d-2a9c-4dc2-bfdd-cf3c9a1df120" />
 </Solution>
