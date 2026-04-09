@@ -9,6 +9,7 @@
   <Project Path="Domain_01/Domain_01.csproj" Id="9ffab3d5-531e-46e7-8d1f-a3cb7603af1c" />
   <Project Path="Domain_02/Domain_02.csproj" Id="032b9b87-7def-435b-a0a9-b982e2ae7c5c" />
   <Project Path="Domain_WebApi_01/Domain_WebApi_01.csproj" Id="59ed9a9e-e2d0-408b-a75b-adfd31297788" />
+  <Project Path="Services/Services.csproj" Id="947ce1e3-3d95-4bea-8aee-39956e5d49f2" />
   <Project Path="Tuto_01/Tuto_01_AdoDotNet.csproj" />
   <Project Path="Tuto_02_Dapper/Tuto_02_Dapper.csproj" Id="f9f385e1-c388-4591-bac0-4b3f019dbeea" />
   <Project Path="Tuto_03_EFCore/Tuto_03_EFCore.csproj" Id="a8dfc7cd-445f-41ea-9955-fe11fbbf61f6" />

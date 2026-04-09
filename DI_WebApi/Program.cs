@@ -2,6 +2,7 @@ using DatabaseTwo.Models;
 using Domain_01.Features;
 using Domain_02.Services;
 using Microsoft.EntityFrameworkCore;
+using Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +13,13 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<AppDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
-});
+},ServiceLifetime.Transient,ServiceLifetime.Transient);
+
 //builder.Services.AddScoped<IQuoteService,QuoteService>();
+builder.Services.AddScoped<IBookService,BookService>();
 builder.Services.AddScoped<IQuoteService,QuoteService2>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
-builder.Services.AddScoped<IBookService,BookService>();
+builder.Services.AddScoped<ProductService>();
 
 var app = builder.Build();
 
