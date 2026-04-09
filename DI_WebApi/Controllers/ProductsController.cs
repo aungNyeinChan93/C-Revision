@@ -10,9 +10,9 @@ namespace DI_WebApi.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private ProductService _productService;
+        private IProductService _productService;
 
-        public ProductsController(ProductService productService)
+        public ProductsController(IProductService productService)
         {
             _productService = productService;
         }

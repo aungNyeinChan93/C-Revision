@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Services.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private HttpClient _client;
 
@@ -25,7 +25,8 @@ namespace Services.Services
             {
                 var str = await response.Content.ReadAsStringAsync();
                 return str;
-            };
+            }
+            ;
             return null;
         }
 
@@ -43,8 +44,8 @@ namespace Services.Services
         public async Task<string?> CreateAsync(Product product)
         {
             var str = JsonConvert.SerializeObject(product);
-            var strContent = new StringContent(str,Encoding.UTF8,"application/json");
-            var response = await _client.PostAsync(this._baseUrl+ "/add", strContent);
+            var strContent = new StringContent(str, Encoding.UTF8, "application/json");
+            var response = await _client.PostAsync(this._baseUrl + "/add", strContent);
             if (response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadAsStringAsync();
@@ -53,7 +54,7 @@ namespace Services.Services
             return null;
         }
 
-        public async Task<string?> UpdateAsyn(Product product,int id)
+        public async Task<string?> UpdateAsyn(Product product, int id)
         {
             var str = JsonConvert.SerializeObject(product);
             var strContent = new StringContent(str, Encoding.UTF8, "application/json");
@@ -66,7 +67,7 @@ namespace Services.Services
             return null;
         }
 
-        public async Task<string?> DeleteAsync( int id)
+        public async Task<string?> DeleteAsync(int id)
         {
             var response = await _client.DeleteAsync(this._baseUrl + $"/{id}");
             if (response.IsSuccessStatusCode)

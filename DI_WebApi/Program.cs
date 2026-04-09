@@ -19,7 +19,9 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 builder.Services.AddScoped<IBookService,BookService>();
 builder.Services.AddScoped<IQuoteService,QuoteService2>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
-builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<CommentService>();
+builder.Services.AddScoped<CartService>();
 
 var app = builder.Build();
 
